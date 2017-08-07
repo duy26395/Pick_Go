@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">i-Tour</string>
+    <string name="title_home">Home</string>
+    <string name="title_user">User</string>
+    <string name="title_weather">weather</string>
+    <string name="title_activity_home">HomeActivity</string>
+</resources>

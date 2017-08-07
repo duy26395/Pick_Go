@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:layout_marginTop="30dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_margin="40dp"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:textSize="40dp"
+            android:id="@+id/iddd"
+            android:background="#5f000000"
+            android:textColor="#FFFFFF"
+            android:layout_margin="30dp"
+            android:text="Đia Điểm" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="30dp"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:id="@+id/idat"
+            android:background="#5f000000"
+            android:textSize="40dp"
+            android:text="Ẩm Thực" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/iddv"
+            android:textColor="#FFFFFF"
+            android:layout_weight="1"
+            android:layout_margin="30dp"
+            android:background="#5f000000"
+            android:textSize="40dp"
+            android:text="Dịch vụ" />
+
+    </LinearLayout>
+
+</RelativeLayout>
