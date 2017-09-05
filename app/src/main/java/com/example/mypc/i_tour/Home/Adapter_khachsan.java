@@ -1,5 +1,6 @@
 package com.example.mypc.i_tour.Home;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -40,6 +41,18 @@ public class Adapter_khachsan extends RecyclerView.Adapter<Adapter_khachsan.View
     @Override
     public void onBindViewHolder(Adapter_khachsan.ViewHolder holder, int position) {
         holder.bindData(mAndroidList.get(position));
+        holder.setonclick(new Onitemclick() {
+            @Override
+            public void onItem(View v, int post) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                String c =  holder.mTvName.getText().toString();
+                String d = holder.mTvintro.getText().toString();
+//                String e = holder.msdt.getText().toString();
+                builder.setTitle(c);
+                builder.setMessage(d);
+                builder.show();
+            }
+        });
     }
 
     @Override
@@ -48,8 +61,8 @@ public class Adapter_khachsan extends RecyclerView.Adapter<Adapter_khachsan.View
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private Onitemclick onitemclick;
         private TextView mTvName, mTvintro,msdt;
         public ViewHolder(View view) {
             super(view);
@@ -62,6 +75,18 @@ public class Adapter_khachsan extends RecyclerView.Adapter<Adapter_khachsan.View
             mTvName.setText(data_tt.getTenKS());
             mTvintro.setText(data_tt.getDiaChi());
             msdt.setText(data_tt.getSDT());
+            itemView.setOnClickListener(this);
+
+        }
+        void setonclick(Onitemclick onitemclick)
+        {
+            this.onitemclick = onitemclick;
+        }
+
+        @Override
+        public void onClick(View view) {
+            onitemclick.onItem(view,getAdapterPosition());
         }
     }
+
 }

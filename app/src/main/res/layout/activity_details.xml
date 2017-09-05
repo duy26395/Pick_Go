@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="5dp"
         android:background="#7f000000"
         android:id="@+id/line">
         <ImageView
@@ -18,26 +17,35 @@
             android:id="@+id/imgct"
             android:src="@mipmap/ic_launcher_round" />
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_marginTop="20dp"
-            android:layout_height="30dp">
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
             <Button
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
+                android:id="@+id/btnsave"
                 android:background="@drawable/btn_save"/>
-            <Button
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/btn_like"
-                android:paddingLeft="60dp"
+            <com.facebook.share.widget.LikeView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:id="@+id/idlike"
-                android:layout_marginLeft="80dp"/>
-            <Button
+                />
+            <com.facebook.share.widget.ShareButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:id="@+id/idshare"
-                android:background="@drawable/btn_share"/>
+                android:layout_marginLeft="10dp"
+                android:id="@+id/idshare" />
+            <RatingBar
+                android:id="@+id/ratingbar"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp"
+                style= "@style/CustomRatingBar"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1.0"
+                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

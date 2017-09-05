@@ -3,42 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:layout_marginTop="30dp">
+    android:layout_marginTop="10dp">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_margin="40dp"
         android:layout_height="match_parent">
         <Button
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_weight="1"
-            android:textSize="40dp"
             android:id="@+id/iddd"
-            android:background="#5f000000"
-            android:textColor="#FFFFFF"
-            android:layout_margin="30dp"
-            android:text="Đia Điểm" />
+            android:background="@drawable/address"
+            android:layout_margin="5dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_margin="30dp"
-            android:textColor="#FFFFFF"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:id="@+id/idat"
-            android:background="#5f000000"
-            android:textSize="40dp"
-            android:text="Ẩm Thực" />
+            android:background="@drawable/footbtn"
+            android:textSize="40dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/iddv"
             android:textColor="#FFFFFF"
             android:layout_weight="1"
-            android:layout_margin="30dp"
-            android:background="#5f000000"
-            android:textSize="40dp"
-            android:text="Dịch vụ" />
+            android:layout_margin="5dp"
+            android:background="@drawable/service" />
 
     </LinearLayout>
 

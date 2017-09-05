@@ -28,7 +28,7 @@ public class AmThuc_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_am_thuc_);
+        setContentView(R.layout.activity_foot);
         recyclerView = (RecyclerView) findViewById(R.id.id_listat);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);

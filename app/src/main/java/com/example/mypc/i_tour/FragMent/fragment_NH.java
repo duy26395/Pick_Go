@@ -37,9 +37,9 @@ public class fragment_NH extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_diadiem, container, false);
+        View view = inflater.inflate(R.layout.activity_adress, container, false);
 
-        recyclerView = view.findViewById(R.id.id_listdd);
+        recyclerView = (RecyclerView) view.findViewById(R.id.id_listdd);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();

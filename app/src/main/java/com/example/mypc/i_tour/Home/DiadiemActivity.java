@@ -28,7 +28,7 @@ public class DiadiemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_diadiem);
+        setContentView(R.layout.activity_adress);
         recyclerView = (RecyclerView) findViewById(R.id.id_listdd);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());

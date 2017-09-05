@@ -23,6 +23,20 @@ public class Data_diadiem {
     @SerializedName("ID_vung")
     @Expose
     private String iDVung;
+    @SerializedName("Latitude")
+    @Expose
+    private String latitude;
+    @SerializedName("Longitude")
+    @Expose
+    private String longitude;
+
+    public Data_diadiem(String tendd, String latitude, String longitude) {
+        this.tendd = tendd;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+
 
     public String getIDDd() {
         return iDDd;
@@ -64,4 +78,19 @@ public class Data_diadiem {
         this.iDVung = iDVung;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
 }

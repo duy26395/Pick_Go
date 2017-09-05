@@ -25,13 +25,7 @@ public class Adapter_dd extends RecyclerView.Adapter<Adapter_dd.ViewHolder> {
     private ArrayList<Data_diadiem> mAndroidList;
     private Context context;
 
-
-// //   public Array_adapter(ArrayList<Data_View> mAndroidList) {
-//        this.mAndroidList = mAndroidList;
-//    }
-
-
-    public Adapter_dd(Context context,ArrayList<Data_diadiem> mAndroidList) {
+    public Adapter_dd(Context context, ArrayList<Data_diadiem> mAndroidList) {
         this.mAndroidList = mAndroidList;
         this.context = context;
     }
@@ -49,28 +43,23 @@ public class Adapter_dd extends RecyclerView.Adapter<Adapter_dd.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.bindData(mAndroidList.get(position));
+        final  String id = mAndroidList.get(position).getIDDd();
         final  String  name = mAndroidList.get(position).getTendd();
         final  String  gt = mAndroidList.get(position).getMota();
         final String hinh = mAndroidList.get(position).getHinhAnh();
-        holder.setonclick(new Onitemclick() {
-            @Override
-            public void onItem(View v, int post) {
-
-                opendetail(name,hinh,gt);
-            }
-        });
+        holder.setonclick((v, post) -> opendetail(id,name,hinh,gt));
 
 
     }
-    private void opendetail(String name, String hinh, String gt) {
+    private void opendetail(String id,String name, String hinh, String gt) {
         Intent intent =new Intent(context,DetailsActivity.class);
         Bundle bundle = new Bundle();
+        bundle.putString("ID_KEY",id);
         bundle.putString("NAME_KEY",name);
         bundle.putString("IMAGE_KEY",hinh);
         bundle.putString("INTRO_KEY",gt);
         intent.putExtra("DATA",bundle);
         context.startActivity(intent);
-
     }
     @Override
     public int getItemCount() {
@@ -78,21 +67,21 @@ public class Adapter_dd extends RecyclerView.Adapter<Adapter_dd.ViewHolder> {
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView mTvName, mTvintro;
         private ImageView imageView;
         private Onitemclick onitemclick;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
             imageView = (ImageView) view.findViewById(R.id.idimg);
-            mTvName = (TextView) view.findViewById(R.id.idtieude);
-            mTvintro = (TextView) view.findViewById(R.id.idmota);
+            mTvName = (TextView)view.findViewById(R.id.idtieude);
+            mTvintro = (TextView)view.findViewById(R.id.idmota);
 
         }
 
-        public void bindData(Data_diadiem data_tt) {
+        void bindData(Data_diadiem data_tt) {
             mTvName.setText(data_tt.getTendd());
             mTvintro.setText(data_tt.getMota());
             Glide.with(itemView.getContext())
@@ -100,7 +89,7 @@ public class Adapter_dd extends RecyclerView.Adapter<Adapter_dd.ViewHolder> {
                     .into(imageView);
             itemView.setOnClickListener(this);
         }
-        public void setonclick(Onitemclick onitemclick)
+        void setonclick(Onitemclick onitemclick)
         {
             this.onitemclick = onitemclick;
         }
